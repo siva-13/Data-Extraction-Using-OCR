@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>upload</title>
+    <style>
+        body
+        {
+            background-color: rgb(94, 231, 146);
+        }
+        form
+        {
+            margin-top: 10px;
+            margin-bottom: 100px;
+            margin-right: 400px;
+            margin-left: 450px;
+
+        }
+        h1{
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-left: 500px;
+            margin-right: 500px;
+            border-radius: 20px;
+            text-align: center;
+            background-color: rgb(73, 224, 86);
+            border-style: solid;
+        }
+              label.logo{
+            color: white;
+            font-size: 35px;
+            line-height: 80px;
+            padding-left: 32%;
+            font-weight: bold;
+        }
+            h3{
+            text-align: center;
+            color: white;
+            padding-bottom: 30px;
+            }
+            #top{
+                background-color:rgba(35, 216, 75, 0.966);
+            }
+            span{
+                background-color: aqua;
+            }
+
+    </style>
+</head>
+<body>
+    <div id="top">
+    <label class="logo">DOCUMENT  DATA  EXTRACTION </label>
+    <h3>ID detials extraction using tesseract OCR & Open CV</h3>
+   </div>
+    <h1>UPLOAD YOUR FILE</h1>
+    <form action = "/success" method = "post" enctype="multipart/form-data">
+        <input type="file" name="file"  />
+        <input type = "submit" value="Upload" >
+    </form>
+</body>
+</html>
