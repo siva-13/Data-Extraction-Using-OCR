@@ -9,16 +9,13 @@ import re
 def main(imgpath="test1.jpg"):
     # Path Allocation
     img = cv2.imread(imgpath)
-
     imgsharp = r'C:\Users\hp\PycharmProjects\Flask-work\ImgSharp\sharp.png'
     imgtotxt = r"C:\Users\hp\PycharmProjects\Flask-work\Image2text\text.txt"
     facepath = r'C:\Users\hp\PycharmProjects\Flask-work\static\img.png'
     face_cas = cv2.CascadeClassifier(r'C:\Users\hp\anaconda3\Library\etc\haarcascades\haarcascade_frontalface_default.xml')
     path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-    #cv2.imshow('img_name',img)
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
+    
     # Face Dedection
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cas.detectMultiScale(gray, scaleFactor=1.05, minNeighbors=15)
@@ -32,18 +29,15 @@ def main(imgpath="test1.jpg"):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
-
-    # pytesseract.image_to_string(img, config=custom_config)
-    # img = cv2.imread(r'C:\Users\hp\Music\.ipynb_checkpoints\samp1.jpeg')
+    # img -> gray
     def get_grayscale(image):
         return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-
-    # thresholding
+    
+    # gray -> thresholding
     def thresholding(image):
         return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
-
+    # image -> gray -> thresholding image    
     gray = get_grayscale(img)
     thresh = thresholding(gray)
 
@@ -52,10 +46,7 @@ def main(imgpath="test1.jpg"):
     # cv2.destroyAllWindows()
     cv2.imwrite(imgsharp, thresh)
 
-    # path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-    # image_path = path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-    # image_path = r'C:\Users\hp\Music\.ipynb_checkpoints\sharp.png'
-
+    
     # Opening the image & storing it in an image object
     img = Image.open(imgsharp)
 
@@ -105,6 +96,7 @@ def main(imgpath="test1.jpg"):
         #print("PAN NUMBER : " + pan.group())
         file.close()
         return RNAME,RFATHER_NAME,RDOB,RPAN_NUMBER
+    
     # if given docment is driving license
     def drivingExtract(textfile):
         file = open(textfile)
