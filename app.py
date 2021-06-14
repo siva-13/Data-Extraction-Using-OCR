@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import textextract
 import os
 app = Flask(__name__)
-UPLOAD_FOLDER = r'C:\Users\hp\PycharmProjects\Flask-work\uploaded_image'
+UPLOAD_FOLDER = r'C:\Users\hp\PycharmProjects\Flask-work'
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')  
 def upload():  
