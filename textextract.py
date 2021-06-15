@@ -88,7 +88,6 @@ def main(imgpath="test1.jpg"):
         RNAME="NAME : " + non_empty_lines[2]
         RFATHER_NAME="FATHER NAME : " + non_empty_lines[3]
         RDOB="DOB : " + dobr.group()
-
         RPAN_NUMBER="PAN NUMBER : " + pan.group()
         #print("NAME : " + non_empty_lines[2])
         #print("FATHER NAME : " + non_empty_lines[3])
